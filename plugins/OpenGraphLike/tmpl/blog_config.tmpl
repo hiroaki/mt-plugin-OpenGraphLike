@@ -20,6 +20,10 @@
     <input type="checkbox" name="fb_excerpt" id="fb_excerpt" value="1" <mt:if name="fb_excerpt"> checked="checked"</mt:if>  />
   </mtapp:setting>
 
+  <mtapp:setting id="og_image" label="<__trans phrase='URL of site image'>" hint="Image must be at least 200px in both dimensions." show_hint="1">
+    <input type="text" name="og_image" id="og_image" value="<mt:GetVar name="og_image">" />
+  </mtapp:setting>
+
 </fieldset>
   
 

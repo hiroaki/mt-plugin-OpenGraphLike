@@ -6,6 +6,7 @@ use vars qw( %Lexicon );
 
 our %Lexicon = (
     'Use Excerpt' => '本文でなく概要を利用',
+    'URL of site image' => 'サイトのイメージURL',
     'Common Settings' => '共通設定',
     'Include count' => 'Plus数を表示',
     'Button Size' => 'ボタンのサイズ',

@@ -46,6 +46,7 @@ sub _get_opengraph_meta {
     }
     
     # Add og:image for assets
+    my $attatched = 0;
     if ($params{'entry'}) {
         use MT::Asset;
         use MT::ObjectAsset;
@@ -55,7 +56,11 @@ sub _get_opengraph_meta {
         });
         for my $asset (@assets) {
             $meta .= '<meta property="og:image" content="'. $asset->url  . '"/>';
+            $attatched = 1;
         }
+    }
+    if( ! $attatched and $params{'config'}->{'og_image'} ){
+        $meta .= '<meta property="og:image" content="'. $params{'config'}->{'og_image'}  . '"/>';
     }
     $meta .= '<script type="text/javascript" src="https://apis.google.com/js/plusone.js">'
         .  "{lang: '" . $params{'config'}{'og_lang'} . "'}</script>";
